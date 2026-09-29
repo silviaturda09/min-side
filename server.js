@@ -4,6 +4,7 @@
 // skal snakke med. Dem skriver du selv:
 //
 //   Oppgave 6:   GET  /api/<tabellen din>   gir alle radene
+
 //   Oppgave 13:  POST /api/<tabellen din>   legger til én rad
 //
 // Kjør:  npm run dev   (starter på nytt hver gang du lagrer)
@@ -27,7 +28,10 @@ app.use(express.static('public')); // serverer index.html, app.js og resten av p
 // ---------------------------------------------------------------
 // Oppgave 6: GET /api/<tabellen din> – alle radene
 // ---------------------------------------------------------------
-
+app.get('/api/film', (req, res) => {
+  const filmer = db.prepare('SELECT * FROM film').all();
+  res.json(filmer);
+});
 // ---------------------------------------------------------------
 // Oppgave 13: POST /api/<tabellen din> – legg til én rad
 // ---------------------------------------------------------------
