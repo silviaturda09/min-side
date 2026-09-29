@@ -1,0 +1,26 @@
+{
+  "name": "min-side",
+  "version": "1.0.0",
+  "description": "Min egen side – database, API og en side som viser det",
+  "main": "server.js",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.4"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "reset-db": "node reset-db.js",
+    "test": "node --test tester/git.test.js tester/database.test.js tester/frontend.test.js tester/html.test.js",
+    "test:watch": "node --test --watch tester/git.test.js tester/database.test.js tester/frontend.test.js tester/html.test.js",
+    "git": "node --test tester/git.test.js",
+    "database": "node --test tester/database.test.js",
+    "api": "node --test tester/api.test.js",
+    "frontend": "node --test tester/frontend.test.js",
+    "html": "node --test tester/html.test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

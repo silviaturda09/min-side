@@ -1,0 +1,10 @@
+# Lastes ned av «npm install». Kan lages på nytt når som helst.
+node_modules/
+
+# Bygges av «npm run reset-db» fra database.sql.
+# Vi committer oppskriften, ikke kaka.
+data.db
+data.db-*
+
+# macOS legger denne i hver mappe du åpner i Finder.
+.DS_Store

@@ -1,0 +1,16 @@
+-- Oppgave 5: databasen din.
+--
+-- Én tabell holder. Kravene:
+--
+--   * en id som primærnøkkel:   id INTEGER PRIMARY KEY
+--   * minst 5 kolonner i tillegg til id
+--   * minst 5 rader med data
+--   * tabellnavnet uten æ, ø og å. Navnet blir også en adresse,
+--     /api/<tabellnavn>, og Express finner ikke adresser med æøå.
+--
+-- Bygg databasen:   npm run reset-db
+-- Sjekk den:        npm run database
+--
+-- Lager du flere tabeller, regner testene den med flest kolonner som
+-- hovedtabellen – den som skal vises på sida.
+
