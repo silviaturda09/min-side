@@ -13,7 +13,54 @@
 <body>
 
   <!-- Oppgave 8: bygg sida her. -->
+<header>
+  <h1>FilmFinder</h1>
+  <p>Find, rate and review your favorite films.</p>
+</header>
 
+<main>
+  <table>
+    <caption>Films</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Year</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Score</th>
+        <th scope="col">Review</th>
+      </tr>
+    </thead>
+    <tbody id="rader"></tbody>
+  </table>
+</main>
+
+<footer>
+  <p>FilmFinder</p>
+<form id="skjema">
+  <label for="title">Title</label>
+  <input id="title" name="title" type="text" required>
+
+  <label for="year">Year</label>
+  <input id="year" name="year" type="number" min="1900" required>
+
+  <fieldset>
+    <legend>Genre</legend>
+    <label><input type="radio" name="genre" value="Sci-Fi"> Sci-Fi</label>
+    <label><input type="radio" name="genre" value="Romance"> Romance</label>
+    <label><input type="radio" name="genre" value="Animation"> Animation</label>
+    <label><input type="radio" name="genre" value="Adventure"> Adventure</label>
+  </fieldset>
+
+  <label for="dice_score">Score</label>
+  <input id="dice_score" name="dice_score" type="range" min="1" max="6">
+
+  <label for="review">Review</label>
+  <textarea id="review" name="review"></textarea>
+
+  <button type="submit">Add film</button>
+</form>
+</footer>
   <!-- Oppgave 11–12: skjemaet kommer her. -->
 
   <script type="module" src="app.js"></script>

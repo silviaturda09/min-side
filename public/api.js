@@ -21,8 +21,16 @@
  * Sender serveren { feil: '...' }, er det fint å bruke den teksten.
  */
 export async function hentAlle() {
-  // TODO
-}
+  const svar = await fetch('/api/film');
+
+  if (!svar.ok) {
+    const feil = await svar.json();
+    throw new Error(feil.feil || 'Kunne ikke hente filmer');
+  }
+
+  return await svar.json();
+}  // TODO
+
 
 /**
  * Oppgave 14
@@ -38,5 +46,19 @@ export async function hentAlle() {
  * Sjekk svar.ok her også.
  */
 export async function leggTil(rad) {
-  // TODO
-}
+  const svar = await fetch('/api/film', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(rad)
+  });
+
+  if (!svar.ok) {
+    const feil = await svar.json();
+    throw new Error(feil.feil || 'Kunne ikke legge til film');
+  }
+
+  return await svar.json();
+}  // TODO
+

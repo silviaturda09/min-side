@@ -35,6 +35,18 @@ app.get('/api/film', (req, res) => {
 // ---------------------------------------------------------------
 // Oppgave 13: POST /api/<tabellen din> – legg til én rad
 // ---------------------------------------------------------------
+app.post('/api/film', (req, res) => {
+  const { title, year, genre, dice_score, review } = req.body;
+
+  const result = db.prepare(`
+    INSERT INTO film (title, year, genre, dice_score, review)
+    VALUES (?, ?, ?, ?, ?)
+  `).run(title, year, genre, dice_score, review);
+
+  const film = db.prepare('SELECT * FROM film WHERE id = ?').get(result.lastInsertRowid);
+
+  res.status(201).json(film);
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

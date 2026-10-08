@@ -27,5 +27,14 @@
  * Bruk textContent, ikke innerHTML. Hvorfor? Prøv, og se hva testen sier.
  */
 export function lagRad(rad) {
-  // TODO
-}
+  const tr = document.createElement('tr');
+
+  Object.values(rad).forEach(verdi => {
+    const td = document.createElement('td');
+    td.textContent = verdi;
+    tr.append(td);
+  });
+
+  return tr;
+}  // TODO
+
